@@ -96,7 +96,7 @@ protected:
 
 
 class Ftp_List : public Ftp_Task {
-    static std::string GetDirData(const std::string &path);
+    static std::string getDirData(const std::string &path);
     static std::string getFilePermissions(const std::filesystem::directory_entry &f);
     static std::string getFileTime(const std::filesystem::directory_entry &f);
     static int getDirectoryCount(const std::filesystem::path &fp);

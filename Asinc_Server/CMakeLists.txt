@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(shared Server.hpp Thread.cpp ThreadPool.cpp Ftp_Server_CMD.cpp Ftp_Task.cpp
-    Ftp_Factory.cpp Ftp_User.cpp Ftp_List.cpp Ftp_Port.cpp Ftp_Retr.cpp Ftp_Stor.cpp)
+    Ftp_Factory.cpp Ftp_List.cpp Ftp_Port.cpp Ftp_Retr.cpp Ftp_Stor.cpp)
 
 add_executable(server main.cpp)
 

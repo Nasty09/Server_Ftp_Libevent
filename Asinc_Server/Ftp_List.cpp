@@ -1,6 +1,6 @@
 #include "Server.hpp"
 
-std::string Ftp_List::GetDirData(const std::string &path) {
+std::string Ftp_List::getDirData(const std::string &path) {
     std::cout << path << " " << std::filesystem::absolute(path) << "\n";
     std::string data;
     for (auto &f:std::filesystem::directory_iterator(path))
@@ -75,7 +75,7 @@ void Ftp_List::Parse(const std::string &type, const std::string &msg)
     }
     else if (type == "LIST") {
         //std::string dirData = "-rwxrwxrwx 1 root root 64463 Mar 14 09:53 101.jpg\r\n";
-        std::string dirData = GetDirData(cmdTask->rootDir + cmdTask->curDir);
+        std::string dirData = getDirData(cmdTask->rootDir + cmdTask->curDir);
         ConnectPORT();
         ResponseCMD("150 Here comes the directory listing.\r\n");
         Send(dirData);

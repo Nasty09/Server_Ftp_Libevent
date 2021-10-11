@@ -24,7 +24,7 @@ bool Ftp_Server_CMD::Init() {
     timeval readtime = {120, 0};
     bufferevent_set_timeouts(bev, &readtime, nullptr);
 
-    std::string msg = "220 Welcome to libevent XFTPServer\r\n";
+    std::string msg = "220 Welcome to libevent Ftp_Server\r\n";
     bufferevent_write(bev, msg.c_str(), msg.size());
 
     return true;
