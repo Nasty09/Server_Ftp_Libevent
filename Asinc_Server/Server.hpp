@@ -144,12 +144,4 @@ public:
     void Event(bufferevent *bev, short what) override;
 };
 
-
-class Ftp_User : public Ftp_Task {
-public:
-    Ftp_User() = default;
-    ~Ftp_User() = default;
-    void Parse(const std::string &type, const std::string &msg) override;
-};
-
 #endif
