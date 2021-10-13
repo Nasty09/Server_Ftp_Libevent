@@ -89,7 +89,7 @@ void Ftp_Server_CMD::Reg(const std::string &cmd, Ftp_Task *call) {
         std::cout << "Ftp_Server_CMD::Reg call is empty\n";
         return;
     }
-    ///已经注册的不覆盖，提示错误
+
     if (calls.find(cmd) != calls.end())
     {
         std::cout << cmd << " is already register \n";
