@@ -14,11 +14,10 @@ void listen_cb(evconnlistener *e, evutil_socket_t s, sockaddr *sock, int socklen
     ThreadPool::GetInstance()->Dispatch(task);
 }
 
-int main(int argc, char *argv[]) {
+int main() {
     if (signal(SIGPIPE, SIG_IGN) == SIG_IGN) //ignore all signals exapt SIGKILL or SIGSTOP
         return 1;
 
-//    int s(*argv[0]);
     ThreadPool::GetInstance()->Init(10); //initiation of communication flows
 
     auto base = event_base_new();
@@ -37,7 +36,7 @@ int main(int argc, char *argv[]) {
             listen_cb,
             base,
             LEV_OPT_REUSEABLE | LEV_OPT_CLOSE_ON_FREE,
-            10,/**argv[0],*/
+            10,
             reinterpret_cast<sockaddr *>(&sock),
             sizeof(sock)
     );
